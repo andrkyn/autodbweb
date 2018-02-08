@@ -62,21 +62,21 @@ AppAsset::register($this);
     <div class="container-fluid menu_top">
         <div class="container">
             <div class="row">
-                <nav>
+
                     <?php
 
                     NavBar::begin([
-                    'brandLabel' => Yii::$app->name,
+                    //'brandLabel' => Yii::$app->name,
                     'brandUrl' => Yii::$app->homeUrl,
                     'options' => [
-                    'class' => 'navbar-inverse navbar-fixed-top',
+                    'class' => ' ',
                     ],
                     ]);
                     echo Nav::widget([
-                    'options' => ['class' => 'navbar-nav navbar-right'],
+                    'options' => ['class' => 'navbar-nav'],
                     'items' => [
                     ['label' => 'Home', 'url' => ['/site/index']],
-                    ['label' => 'About', 'url' => ['/site/about']],
+                    ['label' => 'Список автомобилей', 'url' => ['/page/listauto']],
                     ['label' => 'Contact', 'url' => ['/site/contact']],
                     Yii::$app->user->isGuest ? (
                     ['label' => 'Login', 'url' => ['/site/login']]
@@ -96,7 +96,7 @@ AppAsset::register($this);
 
                     ?>
 
-            <!-- Brand and toggle get grouped for better mobile display -->
+            <!-- Brand and toggle get grouped for better mobile display
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
                             <span class="sr-only">Toggle navigation</span>
@@ -106,7 +106,7 @@ AppAsset::register($this);
                         </button>
                     </div>
 
-                    <!-- Collect the nav links, forms, and other content for toggling -->
+                    <!-- Collect the nav links, forms, and other content for toggling
                     <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                         <ul class="nav navbar-nav">
                             <li class="active"><a href="#">Одежда</a></li>
@@ -116,8 +116,8 @@ AppAsset::register($this);
                             <li><a href="#">Сувениры</a></li>
                         </ul>
                     </div>
+            -->
 
-                </nav>
             </div>
         </div>
     </div>
