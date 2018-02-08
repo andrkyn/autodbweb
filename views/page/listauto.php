@@ -2,8 +2,9 @@
 
 /* @var $this yii\web\View */
 
-$this->title = 'База автомобилей';
+$this->title = 'Список автомобилей';
 ?>
 
 <p>Text main pages</p>
+
 
