@@ -24,11 +24,14 @@ AppAsset::register($this);
     <?php $this->head() ?>
 </head>
 <body>
-<?php $this->beginBody() ?>
-
-
+<?php $this->beginBody()?>
 
 <header>
+    <!-- My Button [-->
+    <form action="../../config/dbCreateDelete.php" method="POST">
+        <input type="submit" value="DB page">
+    </form>
+    <!--] End my button-->
     <div class="container">
         <div class="row header_top">
             <div class="logo col-lg-4 col-md-4 col-sm-12 col-xs-12">
@@ -62,7 +65,6 @@ AppAsset::register($this);
     <div class="container-fluid menu_top">
         <div class="container">
             <div class="row">
-
                     <?php
 
                     NavBar::begin([
@@ -75,9 +77,9 @@ AppAsset::register($this);
                     echo Nav::widget([
                     'options' => ['class' => 'navbar-nav'],
                     'items' => [
-                    ['label' => 'Home', 'url' => ['/site/index']],
+                    ['label' => 'Главная', 'url' => ['/site/index']],
                     ['label' => 'Список автомобилей', 'url' => ['/page/listauto']],
-                    ['label' => 'Contact', 'url' => ['/site/contact']],
+                    ['label' => 'Контакты', 'url' => ['/site/contact']],
                     Yii::$app->user->isGuest ? (
                     ['label' => 'Login', 'url' => ['/site/login']]
                     ) : (
