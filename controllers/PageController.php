@@ -22,4 +22,36 @@ class PageController extends Controller
         return $this->render('listauto');
     }
 
+    public function actionCatalog() //контроллер каталог
+    {
+        return $this->render('catalog');
+    }
+
+
+
+     // для blank1
+    public function actionBlank1() //контроллер списка авто
+    {
+        return $this->render('blank1');
+    }
+
+    // для старниц Контактов
+    public function actionContacts()
+    {
+        return $this->render('contacts');
+    }
+
+    //For login
+    public function actionLogin()
+    {
+        return $this->render('login');
+    }
+
+    //личный кабинет
+    public function actionKabinet()
+    {
+        return $this->render('kabinet');
+    }
+
+
 }

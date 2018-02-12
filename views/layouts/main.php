@@ -9,6 +9,7 @@ use yii\bootstrap\Nav;
 use yii\bootstrap\NavBar;
 use yii\widgets\Breadcrumbs;
 use app\assets\AppAsset;
+use yii\helpers\Url;
 
 AppAsset::register($this);
 ?>
@@ -41,8 +42,8 @@ AppAsset::register($this);
                 <div class="btn_and_search">
                     <div class="btn_top">
                         <a href="#"><i class="glyphicon glyphicon-map-marker"></i>Обратная связь</a>
-                        <a href="#"><i class="glyphicon glyphicon-user"></i>Личный кабинет</a>
-                        <a href="#"><i class="glyphicon glyphicon-lock"></i>Войти</a>
+                        <a href="<?=Url::toRoute('page/kabinet')?>"><i class="glyphicon glyphicon-user"></i>Личный кабинет</a>
+                        <a href="<?=Url::toRoute('page/login')?>"><i class="glyphicon glyphicon-lock"></i>Войти</a>
                     </div>
                     <div class="search_top">
                         <form>
@@ -78,9 +79,10 @@ AppAsset::register($this);
                     'options' => ['class' => 'navbar-nav'],
                     'items' => [
                     ['label' => 'Главная', 'url' => ['/site/index']],
-                    ['label' => 'Список автомобилей', 'url' => ['/page/listauto']],
-                    ['label' => 'Контакты', 'url' => ['/site/contact']],
-                    Yii::$app->user->isGuest ? (
+                    ['label' => 'Каталог автомобилей', 'url' => ['/page/catalog']],
+                    ['label' => 'blank1', 'url' => ['/page/blank1']],
+                    ['label' => 'Контакты', 'url' => ['/page/contacts']],
+                  /*Yii::$app->user->isGuest ? (
                     ['label' => 'Login', 'url' => ['/site/login']]
                     ) : (
                     '<li>'
@@ -91,7 +93,7 @@ AppAsset::register($this);
                         )
                         . Html::endForm()
                         . '</li>'
-                    )
+                    ) */
                     ],
                     ]);
                     NavBar::end();
@@ -151,165 +153,7 @@ AppAsset::register($this);
     </div>
 </div>
 
-<div class="container-fluid tabs_block_main">
-    <div class="container">
-        <div class="row">
-            <ul class="nav nav-tabs">
-                <li class="active"><a href="#tab1" data-toggle="tab">Хиты</a></li>
-                <li><a href="#tab2" data-toggle="tab">Новинки</a></li>
-                <li><a href="#tab3" data-toggle="tab">Акции</a></li>
-            </ul>
-        </div>
-    </div>
-    <div class="container">
-        <div class="row">
-            <div class="tab-content">
-                <div class="tab-pane fade in active" id="tab1">
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="product">
-                            <a href="#" class="product_img">
-                                <span>-10%</span>
-                                <img src="images/prod1.jpg">
-                            </a>
-                            <a href="#" class="product_title">Рюкзак туристический</a>
-                            <div class="product_price">
-                                <span class="price">3500 руб</span>
-                                <span class="price_old">3700 руб</span>
-                            </div>
-                            <div class="product_btn">
-                                <a href="#" class="cart"><i class="glyphicon glyphicon-shopping-cart"></i></a>
-                                <a href="#" class="mylist">Список желаний</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="product">
-                            <a href="#" class="product_img">
-                                <span>-10%</span>
-                                <img src="images/prod2.jpg">
-                            </a>
-                            <a href="#" class="product_title">Рюкзак туристический</a>
-                            <div class="product_price">
-                                <span class="price">3500 руб</span>
-                                <span class="price_old">3700 руб</span>
-                            </div>
-                            <div class="product_btn">
-                                <a href="#" class="cart"><i class="glyphicon glyphicon-shopping-cart"></i></a>
-                                <a href="#" class="mylist">Список желаний</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="product">
-                            <a href="#" class="product_img">
-                                <span>-10%</span>
-                                <img src="images/prod3.jpg">
-                            </a>
-                            <a href="#" class="product_title">Рюкзак туристический</a>
-                            <div class="product_price">
-                                <span class="price">3500 руб</span>
-                                <span class="price_old">3700 руб</span>
-                            </div>
-                            <div class="product_btn">
-                                <a href="#" class="cart"><i class="glyphicon glyphicon-shopping-cart"></i></a>
-                                <a href="#" class="mylist">Список желаний</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="product">
-                            <a href="#" class="product_img">
-                                <span>-10%</span>
-                                <img src="images/prod4.jpg">
-                            </a>
-                            <a href="#" class="product_title">Рюкзак туристический</a>
-                            <div class="product_price">
-                                <span class="price">3500 руб</span>
-                                <span class="price_old">3700 руб</span>
-                            </div>
-                            <div class="product_btn">
-                                <a href="#" class="cart"><i class="glyphicon glyphicon-shopping-cart"></i></a>
-                                <a href="#" class="mylist">Список желаний</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="tab2">
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="product">
-                            <a href="#" class="product_img">
-                                <span>-10%</span>
-                                <img src="images/prod1.jpg">
-                            </a>
-                            <a href="#" class="product_title">Рюкзак туристический</a>
-                            <div class="product_price">
-                                <span class="price">3500 руб</span>
-                                <span class="price_old">3700 руб</span>
-                            </div>
-                            <div class="product_btn">
-                                <a href="#" class="cart"><i class="glyphicon glyphicon-shopping-cart"></i></a>
-                                <a href="#" class="mylist">Список желаний</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="product">
-                            <a href="#" class="product_img">
-                                <span>-10%</span>
-                                <img src="images/prod2.jpg">
-                            </a>
-                            <a href="#" class="product_title">Рюкзак туристический</a>
-                            <div class="product_price">
-                                <span class="price">3500 руб</span>
-                                <span class="price_old">3700 руб</span>
-                            </div>
-                            <div class="product_btn">
-                                <a href="#" class="cart"><i class="glyphicon glyphicon-shopping-cart"></i></a>
-                                <a href="#" class="mylist">Список желаний</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="tab-pane fade" id="tab3">
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="product">
-                            <a href="#" class="product_img">
-                                <span>-10%</span>
-                                <img src="images/prod1.jpg">
-                            </a>
-                            <a href="#" class="product_title">Рюкзак туристический</a>
-                            <div class="product_price">
-                                <span class="price">3500 руб</span>
-                                <span class="price_old">3700 руб</span>
-                            </div>
-                            <div class="product_btn">
-                                <a href="#" class="cart"><i class="glyphicon glyphicon-shopping-cart"></i></a>
-                                <a href="#" class="mylist">Список желаний</a>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-3 col-md-4 col-sm-6 col-xs-12">
-                        <div class="product">
-                            <a href="#" class="product_img">
-                                <span>-10%</span>
-                                <img src="images/prod2.jpg">
-                            </a>
-                            <a href="#" class="product_title">Рюкзак туристический</a>
-                            <div class="product_price">
-                                <span class="price">3500 руб</span>
-                                <span class="price_old">3700 руб</span>
-                            </div>
-                            <div class="product_btn">
-                                <a href="#" class="cart"><i class="glyphicon glyphicon-shopping-cart"></i></a>
-                                <a href="#" class="mylist">Список желаний</a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-</div>
+<?=$content;?>
 
 <div class="container-fluid write_email_and_sseti">
     <div class="container">
