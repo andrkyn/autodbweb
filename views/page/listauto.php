@@ -81,14 +81,14 @@ $this->title = 'Список автомобилей';
 
     <?php
       //var_dump($cars_array);
-     foreach ($cars_array as $product_array):?>
+     foreach ($cars_array as $car_array):?>
      <div class="col-lg-4 col-md-6 col-sm-4 col-xs-12">
             <div class="product">
                 <a href="#" class="product_img">
                     <span>-10%</span>
-                    <img src="images/<? $product_array['img'];?>">
+                    <img src="images/<? $car_array['img'];?>">
                 </a>
-                <a href="#" class="product_title"><? $product_array['name'];?></a>
+                <a href="#" class="product_title"><? $car_array['name'];?></a>
                 <div class="product_price">
                     <span class="price">3500 руб</span>
                     <span class="price_old">3700 руб</span>
@@ -99,7 +99,7 @@ $this->title = 'Список автомобилей';
                 </div>
             </div>
         </div>
-       <?php endforeach; var_dump($product_array); ?>
+       <?php endforeach; var_dump($cars_array); ?>
 
     <!--
     <div class="col-lg-4 col-md-6 col-sm-4 col-xs-12">
