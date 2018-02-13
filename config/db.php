@@ -5,7 +5,7 @@ return [
     'dsn' => 'mysql:host=localhost;dbname=autoDB',
     'username' => 'root',
     'password' => 'sql123',
-    'charset' => 'utf8_general_ci',
+    'charset' => 'utf8',
 
     // Schema cache options (for production environment)
     //'enableSchemaCache' => true,

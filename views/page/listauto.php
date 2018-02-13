@@ -1,7 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
-
+// это вид
 $this->title = 'Список автомобилей';
 ?>
 
@@ -25,12 +25,15 @@ $this->title = 'Список автомобилей';
     </form>
 </div>
 
+
 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+
     <div class="short_description">
-    <img src="images/prod1.jpg">
+
+        <img src="images/<?php echo $categories['img'];?>">
     <div>
-        <h2>Рюкзаки</h2>
-        <p>В выборе туристического рюкзака необходимо полагаться не только на его внешний вид, но и важные характеристики, такие как его объем, вес, крепления и многие другие. Для разных целей существуют отдельные подгруппы рюкзаков.</p>
+        <h2><?php echo $categories['name'];?></h2>
+        <p><?php echo $categories['description'];?></p>
     </div>
 </div>
 <div class="row content">
@@ -75,6 +78,30 @@ $this->title = 'Список автомобилей';
             </div>
         </div>
     </div>
+
+    <?php
+      //var_dump($cars_array);
+     foreach ($cars_array as $product_array):?>
+     <div class="col-lg-4 col-md-6 col-sm-4 col-xs-12">
+            <div class="product">
+                <a href="#" class="product_img">
+                    <span>-10%</span>
+                    <img src="images/<? $product_array['img'];?>">
+                </a>
+                <a href="#" class="product_title"><? $product_array['name'];?></a>
+                <div class="product_price">
+                    <span class="price">3500 руб</span>
+                    <span class="price_old">3700 руб</span>
+                </div>
+                <div class="product_btn">
+                    <a href="#" class="cart"><i class="glyphicon glyphicon-shopping-cart"></i></a>
+                    <a href="#" class="mylist">Список желаний</a>
+                </div>
+            </div>
+        </div>
+       <?php endforeach; var_dump($product_array); ?>
+
+    <!--
     <div class="col-lg-4 col-md-6 col-sm-4 col-xs-12">
         <div class="product">
             <a href="#" class="product_img">
@@ -160,6 +187,7 @@ $this->title = 'Список автомобилей';
             </div>
         </div>
     </div>
+    -->
 </div>
 </div>
 

@@ -65,7 +65,7 @@ if (isset($_POST['dbCreate'])) {
     }
 
     //car (poducts)
-    $sql = "CREATE TABLE car(
+    $sql = "CREATE TABLE cars(
     id INT (4) NOT NULL PRIMARY KEY,
     category INT(4) NOT NULL,
     name VARCHAR (100) NOT NULL,

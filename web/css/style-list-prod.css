@@ -322,7 +322,7 @@ header{
     text-transform: uppercase;
 }
 .write_email_and_sseti_wrap input {
-	widows: 100%;
+	widows: 100;
 	display: block;
 	padding: 7px 50px 7px 12px;
 }
@@ -862,7 +862,7 @@ header{
 	margin:0;
 }
 .filter button{
-	background-color: #ff5b23;
+	background-color: #ffb435;
     color: #fff;
     display: inline-block;
     float: left;
@@ -874,6 +874,26 @@ header{
 .filter button:hover{
 	opacity: 0.9;
 }
+.catalog a:last-child{
+	text-align: center;
+    background-color: #204d74;
+	display: block;
+    padding:10px 0;
+    color: #ebebeb;
+    position: relative;
+    z-index: 1;
+}
+.catalog .catalog_category{
+    margin-bottom: 20px;
+}
+.catalog .catalog_category:hover img{
+    transform: scale(1.1);
+}
+.catalog a:last-child:hover{
+    text-decoration: none;
+    opacity: 0.8;
+}
+
 @media all and (max-width: 1200px) and (min-width: 992px){
 	.ban_block p {
 	    color: #fff;
@@ -1011,7 +1031,7 @@ header{
 	.menu_top li a::before{
 		display: none;
 	}
-	.menu_top li a:hover, {
+	.menu_top li a:hover {
 		color:#ff5b23;
 	}
 	.menu_top .navbar-toggle.active:hover .icon-bar {

@@ -1,6 +1,7 @@
 <?php
 
 /* @var $this yii\web\View */
+use yii\helpers\Url;
 
 $this->title = 'Каталог автомобилей';
 ?>
@@ -10,27 +11,16 @@ $this->title = 'Каталог автомобилей';
   </div>
 
 
-<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
+<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 catalog">
 
     <div class="row content">
-        <div class="col-lg-4 col-md-6 col-sm-4 col-xs-12">
-            <a href="#">img src="images/prod4.jpg"</a>
-            <a>Снаряжение</a>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-4 col-xs-12">
-            <a href="#">img src="images/prod4.jpg"</a>
-            <a>обувь</a>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-4 col-xs-12">
-            <a href="#">img src="images/prod4.jpg"</a>
-            <a>Одежда</a>
-        </div>
-        <div class="col-lg-4 col-md-6 col-sm-4 col-xs-12">
-            <a href="#">img src="images/prod4.jpg"</a>
-            <a>Сувениры</a>
-        </div>
 
+      <?php foreach ($categories as $category):?>
+        <div class="col-lg-4 col-md-6 col-sm-4 col-xs-12 catalog_category">
+            <a href="<?=Url::toRoute(['page/listauto', 'id' => $category['id']]);?>"><img src="images/<?php echo $category['img'];?>"></a>
+            <a href="<?=Url::toRoute(['page/listauto', 'id' => $category['id']]);?>"><?php echo $category['name'];?></a>
+        </div>
+      <?php endforeach;?>
     </div>
-
 </div>
 
