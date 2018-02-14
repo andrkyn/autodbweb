@@ -86,9 +86,9 @@ $this->title = 'Список автомобилей';
             <div class="product">
                 <a href="#" class="product_img">
                     <span>-10%</span>
-                    <img src="images/<? $car_array['img'];?>">
+                    <img src="images/<?=$car_array['img'];?>">
                 </a>
-                <a href="#" class="product_title"><? $car_array['name'];?></a>
+                <a href="#" class="product_title"><?=$car_array['name'];?></a>
                 <div class="product_price">
                     <span class="price">3500 руб</span>
                     <span class="price_old">3700 руб</span>
