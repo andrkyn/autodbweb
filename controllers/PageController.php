@@ -34,7 +34,8 @@ class PageController extends Controller
             if(count($categories)>0)  //если существует категория
             {
                 $cars_array = Autoitems::find()->where(['category' => $_GET['id']])->asArray()->all();
-                return $this->render('listauto', compact('categories', 'cars_array'));
+                $count_car = count($cars_array);
+                return $this->render('listauto', compact('categories', 'cars_array', 'count_car')); //передача массивов в вид listauto
             }
 
         }
@@ -71,6 +72,24 @@ class PageController extends Controller
     public function actionKabinet()
     {
         return $this->render('kabinet');
+    }
+
+    // для выбора конкретного автомобиля
+    public function actionCar()
+    {
+        return $this->render('car');
+    }
+
+    // для корзины
+    public function actionCart()
+    {
+        return $this->render('cart');
+    }
+
+    //для страницы лист желаний
+    public function actionListorder()
+    {
+        return $this->render('listorder');
     }
 
 
