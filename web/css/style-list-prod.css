@@ -893,6 +893,19 @@ header{
     text-decoration: none;
     opacity: 0.8;
 }
+.view_list .product{
+	overflow: hidden;
+	margin-bottom: 20px;
+}
+.view_list .product .product_img{
+	width: 35%;
+	display: block;
+	float:left;
+}
+.view_list .product .desc{
+	float: right;
+	width: 60%;
+}
 
 @media all and (max-width: 1200px) and (min-width: 992px){
 	.ban_block p {

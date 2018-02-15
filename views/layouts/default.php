@@ -131,8 +131,8 @@ DefaultAsset::register($this);
             <div class="navigation">
                 <ul>
                     <li><a href="#"><i class="glyphicon glyphicon-home"></i></a></li>
-                    <li><a href="#">Снаряжение</a></li>
-                    <li><span>Рюкзаки</span></li>
+                    <li><a href="#">Автомобильная база</a></li>
+                    <li><span>Марка авто</span></li>
                 </ul>
             </div>
         </div>
@@ -176,7 +176,7 @@ DefaultAsset::register($this);
                     <ul>
                         <li><a href="#">Одежда</a></li>
                         <li><a href="#">Обувь</a></li>
-                        <li><a href="#">Снаряжение</a></li>
+                        <li><a href="#">Автомобильная база</a></li>
                         <li><a href="#">Амуниция</a></li>
                         <li><a href="#">Сувениры</a></li>
                     </ul>

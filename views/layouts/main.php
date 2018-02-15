@@ -186,7 +186,7 @@ AppAsset::register($this);
                     <ul>
                         <li><a href="#">Одежда</a></li>
                         <li><a href="#">Обувь</a></li>
-                        <li><a href="#">Снаряжение</a></li>
+                        <li><a href="#">Автомобильная база</a></li>
                         <li><a href="#">Амуниция</a></li>
                         <li><a href="#">Сувениры</a></li>
                     </ul>
