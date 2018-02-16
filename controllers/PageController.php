@@ -35,13 +35,14 @@ class PageController extends Controller
             {
                 $cars_array = Autoitems::find()->where(['category' => $_GET['id']])->asArray()->all();
                 $count_car = count($cars_array);
-
-                //проверка на существование переменной view (listauto.php, rung77) [
-                if(isset($_GET['view']) && $_GET['view']=1)
+                  //проверка на существование переменной view (listauto.php, rung77) [
+                 if(isset($_GET['view']) && ($_GET['view']==1))
                    $view=1;
                   else
-                   $view=0;
                   // ]
+                   $view=0;
+                //$this->render('listauto',array('view'=>$view));
+                var_dump($view);
                 return $this->render('listauto', compact('categories', 'cars_array', 'count_car', 'view')); //передача массивов в вид listauto
             }
 
