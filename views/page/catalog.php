@@ -17,7 +17,7 @@ $this->title = 'Каталог автомобилей';
 
       <?php foreach ($categories as $category):?>
         <div class="col-lg-4 col-md-6 col-sm-4 col-xs-12 catalog_category">
-            <a href="<?=Url::toRoute(['page/listauto', 'id' => $category['id']]);?>"><img src="images/<?php echo $category['img'];?>"></a>
+            <a href="<?=Url::toRoute(['page/listauto', 'id' => $category['id']]);?>"><img src="/images/<?php echo $category['img'];?>"></a>
             <a href="<?=Url::toRoute(['page/listauto', 'id' => $category['id']]);?>"><?php echo $category['name'];?></a>
         </div>
       <?php endforeach;?>

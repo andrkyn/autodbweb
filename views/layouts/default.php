@@ -31,7 +31,7 @@ DefaultAsset::register($this);
     <div class="container">
         <div class="row header_top">
             <div class="logo col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <a href="/"><img src="images/logo.png"></a>
+                <a href="/"><img src="/images/logo.png"></a>
             </div>
             <div class="btn_top_wrap col-lg-8 col-md-8 col-sm-12 col-xs-12">
                 <div class="btn_and_search">

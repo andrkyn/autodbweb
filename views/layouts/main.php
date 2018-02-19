@@ -36,7 +36,7 @@ AppAsset::register($this);
     <div class="container">
         <div class="row header_top">
             <div class="logo col-lg-4 col-md-4 col-sm-12 col-xs-12">
-                <a href="/"><img src="images/logo.png"></a>
+                <a href="/"><img src="/images/logo.png"></a>
             </div>
             <div class="btn_top_wrap col-lg-8 col-md-8 col-sm-12 col-xs-12">
                 <div class="btn_and_search">
@@ -132,7 +132,7 @@ AppAsset::register($this);
     <div class="row">
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ban_block ban1">
             <div>
-                <img src="images/ban1.jpg">
+                <img src="/images/ban1.jpg">
                 <a href="#">
                     <h2>Снаряжение для туризма</h2>
                     <p>Широкий выбор уристического снаряжения</p>
@@ -142,7 +142,7 @@ AppAsset::register($this);
         </div>
         <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 ban_block">
             <div>
-                <img src="images/ban2.jpg">
+                <img src="/images/ban2.jpg">
                 <a href="#">
                     <h2>Снаряжение для альпинистов</h2>
                     <p>Качественное снаряжение для альпинизма от мировых брендов</p>
