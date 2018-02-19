@@ -1,11 +1,19 @@
-<!doctype html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-        <title>Document</title>
-</head>
-<body>
- <h1>Blank1</h1>
+<?php
 
-</body>
-</html>
+/* @var $this yii\web\View */
+use yii\helpers\Url;
+
+$this->title = 'Автомобиль';
+?>
+
+<div class="col-lg-3 col-md-3 col-sm-5 col-xs-12 left_banner_menu">
+    Меню баннероное
+</div>
+
+
+<div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 catalog">
+    <div class="row content">
+        BLANK1
+
+    </div>
+</div>

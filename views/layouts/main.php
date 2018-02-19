@@ -29,7 +29,7 @@ AppAsset::register($this);
 
 <header>
     <!-- My Button [-->
-    <form action="../../config/dbCreateDelete.php" method="POST">
+    <form action="../config/dbCreateDelete.php" method="POST">
         <input type="submit" value="DB page">
     </form>
     <!--] End my button-->
