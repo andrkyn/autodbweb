@@ -162,5 +162,5 @@ if (isset($_POST['dbDelete'])) {
 }
 
 if (isset($_POST['redirect'])) {
-    header("Location: http://{$_SERVER['SERVER_NAME']}/web/");
+    header("Location: http://{$_SERVER['SERVER_NAME']}/");
 }

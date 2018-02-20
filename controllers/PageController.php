@@ -61,12 +61,14 @@ class PageController extends Controller
     public function actionBlank1() //контроллер списка авто
     {
         return $this->render('blank1');
+        //return 'Hello test code!';
     }
 
     // для старниц Контактов
     public function actionContacts()
     {
         return $this->render('contacts');
+
     }
 
     //For login
@@ -99,5 +101,9 @@ class PageController extends Controller
         return $this->render('listorder');
     }
 
+    public function actionAbout()
+    {
+        return $this->render('about');
+    }
 
 }

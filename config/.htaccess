@@ -1,0 +1,10 @@
+RewriteBase /
+
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+
+deny from all
+<Files dbcreate.php>
+order allow,deny
+allow from all
+</Files>
