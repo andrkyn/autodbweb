@@ -8,6 +8,9 @@ $config = [
     'basePath' => dirname(__DIR__),
     'bootstrap' => ['log'],
     'layout' => 'default',
+    'language' => 'ru',
+    'defaultRoute' => 'category/index', //маршрут по умолчанию
+    //'catchAll' => ['site/offline'], //переадресация запросов всех на одну страницу, если сайт отключен например
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
         '@npm'   => '@vendor/npm-asset',
@@ -49,7 +52,18 @@ $config = [
         'urlManager' => [
             'enablePrettyUrl' => true,
             'showScriptName' => false,
+            //'suffix' => '.html',
             'rules' => [
+                /*[
+                    'pattern' => '',   //шаблон пустая строка, главная страница
+                    'route' => 'site/index',
+                    'suffix' => ''  //суффикс
+                ],
+                //'about' => 'site/about', //Для одного экшена
+                '<act:(about|contact|login)>' => 'site/<act>', // для перечисленных
+                '<act:\w+>' => 'site/<act>', //любое название екшена */
+                 //'category/<id:\d+>' => 'category/view',
+                 'search' => 'category/search',
             ],
         ],
 

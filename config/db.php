@@ -6,6 +6,7 @@ return [
     'username' => 'root',
     'password' => 'sql123',
     'charset' => 'utf8',
+    //'enableProfiling'=>true,
 
     // Schema cache options (for production environment)
     //'enableSchemaCache' => true,

@@ -29,10 +29,10 @@ $this->title = 'Каталог автомобилей';
 
 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
     <div class="short_description">
-            <img src="/images/<?php echo $categories['img'];?>">
+            <img src="/images/<?php echo $category['img'];?>">
         <div>
-            <h2><?php echo $categories['name'];?></h2>
-            <p><?php echo $categories['description'];?></p>
+            <h2><?php echo $category['name'];?></h2>
+            <p><?php echo $category['description'];?></p>
         </div>
     </div>
  <div class="row content">
@@ -47,7 +47,7 @@ $this->title = 'Каталог автомобилей';
         </div>
     </div>
 
-    <?php var_dump($view); ?>
+    <?php  var_dump($view); ?>
 
     <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
         <div class="row">
@@ -74,8 +74,8 @@ $this->title = 'Каталог автомобилей';
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs view_list_prod">
                 <p><strong>Вид:</strong>
-                    <a href="<?=Url::toRoute(['page/listauto', 'id' => $categories['id'], 'view'=>'0']);?>"><i class="glyphicon glyphicon-th"></i><span>Сетка</span></a>
-                    <a href="<?=Url::toRoute(['page/listauto', 'id' => $categories['id'], 'view'=>'1']);?>"><i class="glyphicon glyphicon-th-list"></i><span>Список</span></a>
+                    <a href="<?=Url::toRoute(['page/listauto', 'id' => $category['id'], 'view'=>'0']);?>"><i class="glyphicon glyphicon-th"></i><span>Сетка</span></a>
+                    <a href="<?=Url::toRoute(['page/listauto', 'id' => $category['id'], 'view'=>'1']);?>"><i class="glyphicon glyphicon-th-list"></i><span>Список</span></a>
                 </p>
             </div>
         </div>

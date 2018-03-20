@@ -25,6 +25,7 @@ AppAsset::register($this);
     <?php $this->head() ?>
 </head>
 <body>
+
 <?php $this->beginBody()?>
 
 <header>
@@ -34,6 +35,10 @@ AppAsset::register($this);
     </form>
     <!--] End my button-->
     <div class="container">
+
+        <a href="<?=Url::to('/')?>">Home</a>
+        <?= Html::a('About', Url::to(['/about'])) ?>
+
         <div class="row header_top">
             <div class="logo col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <a href="/"><img src="/images/logo.png"></a>
@@ -41,6 +46,7 @@ AppAsset::register($this);
             <div class="btn_top_wrap col-lg-8 col-md-8 col-sm-12 col-xs-12">
                 <div class="btn_and_search">
                     <div class="btn_top">
+
                         <a href="#"><i class="glyphicon glyphicon-map-marker"></i>Обратная связь</a>
                         <a href="<?=Url::toRoute('page/kabinet')?>"><i class="glyphicon glyphicon-user"></i>Личный кабинет</a>
                         <a href="<?=Url::toRoute('page/login')?>"><i class="glyphicon glyphicon-lock"></i>Войти</a>
@@ -82,6 +88,7 @@ AppAsset::register($this);
                     ['label' => 'Каталог автомобилей', 'url' => ['/page/catalog']],
                     ['label' => 'blank1', 'url' => ['/page/blank1']],
                     ['label' => 'Контакты', 'url' => ['/page/contacts']],
+                    ['label' => 'About', 'url' => ['/about']],
                   /*Yii::$app->user->isGuest ? (
                     ['label' => 'Login', 'url' => ['/site/login']]
                     ) : (
@@ -99,7 +106,6 @@ AppAsset::register($this);
                     NavBar::end();
 
                     ?>
-
             <!-- Brand and toggle get grouped for better mobile display
                     <div class="navbar-header">
                         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -155,6 +161,7 @@ AppAsset::register($this);
 
 <?=$content;?>
 
+<!--  отключаю панель рассылка
 <div class="container-fluid write_email_and_sseti">
     <div class="container">
         <div class="row write_email_and_sseti_wrap">
@@ -176,7 +183,9 @@ AppAsset::register($this);
             </div>
         </div>
     </div>
-</div>
+</div> -->
+
+
 <div class="container-fluid footer">
     <div class="container">
         <div class="row menu_footer_and_contact">
@@ -184,11 +193,12 @@ AppAsset::register($this);
                 <div class="footer_menu">
                     <h3>Категории</h3>
                     <ul>
-                        <li><a href="#">Одежда</a></li>
-                        <li><a href="#">Обувь</a></li>
                         <li><a href="#">Автомобильная база</a></li>
-                        <li><a href="#">Амуниция</a></li>
-                        <li><a href="#">Сувениры</a></li>
+                        <li><a href="#">item1</a></li>
+                        <li><a href="#">item2</a></li>
+                        <li><a href="#">item3</a></li>
+                        <li><a href="#">item4</a></li>
+
                     </ul>
                 </div>
                 <div class="footer_menu">
@@ -204,18 +214,18 @@ AppAsset::register($this);
                 <div class="footer_menu">
                     <h3>Учетная запись</h3>
                     <ul>
-                        <li><a href="#">Войти</a></li>
-                        <li><a href="#">Зарегистрироваться</a></li>
-                        <li><a href="#">Мои заказы</a></li>
-                        <li><a href="#">Список желаний</a></li>
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Regiter</a></li>
+                        <li><a href="#">My order</a></li>
+                        <li><a href="#">Wish list</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 contacts">
-                <h3>Контакты</h3>
-                <p><i class="glyphicon glyphicon-map-marker"></i>Адрес: ул. Ленина, 9 г. Москва, 603089</p>
-                <p><i class="glyphicon glyphicon-phone-alt"></i>Служба поддержки: 8 (800) 000-00-00</p>
-                <p><i class="glyphicon glyphicon-envelope"></i>E-mail: info@myshop.ru</p>
+                <h3>Contact</h3>
+                <p><i class="glyphicon glyphicon-map-marker"></i>Addres: -----</p>
+                <p><i class="glyphicon glyphicon-phone-alt"></i>Support: -----</p>
+                <p><i class="glyphicon glyphicon-envelope"></i>E-mail: -----</p>
             </div>
         </div>
         <div class="row">

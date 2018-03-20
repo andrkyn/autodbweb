@@ -23,7 +23,7 @@ $this->title = 'База автомобилей';
                         <div class="product">
                             <a href="#" class="product_img">
                                 <span>-10%</span>
-                                <img src="images/prod1.jpg">
+                                <img src="/images/prod1.jpg">
                             </a>
                             <a href="#" class="product_title">Рюкзак туристический</a>
                             <div class="product_price">
@@ -40,7 +40,7 @@ $this->title = 'База автомобилей';
                         <div class="product">
                             <a href="#" class="product_img">
                                 <span>-10%</span>
-                                <img src="images/prod2.jpg">
+                                <img src="/images/prod2.jpg">
                             </a>
                             <a href="#" class="product_title">Рюкзак туристический</a>
                             <div class="product_price">
@@ -57,7 +57,7 @@ $this->title = 'База автомобилей';
                         <div class="product">
                             <a href="#" class="product_img">
                                 <span>-10%</span>
-                                <img src="images/prod3.jpg">
+                                <img src="/images/prod3.jpg">
                             </a>
                             <a href="#" class="product_title">Рюкзак туристический</a>
                             <div class="product_price">
@@ -74,7 +74,7 @@ $this->title = 'База автомобилей';
                         <div class="product">
                             <a href="#" class="product_img">
                                 <span>-10%</span>
-                                <img src="images/prod4.jpg">
+                                <img src="/images/prod4.jpg">
                             </a>
                             <a href="#" class="product_title">Рюкзак туристический</a>
                             <div class="product_price">
@@ -93,7 +93,7 @@ $this->title = 'База автомобилей';
                         <div class="product">
                             <a href="#" class="product_img">
                                 <span>-10%</span>
-                                <img src="images/prod1.jpg">
+                                <img src="/images/prod1.jpg">
                             </a>
                             <a href="#" class="product_title">Рюкзак туристический</a>
                             <div class="product_price">
@@ -110,7 +110,7 @@ $this->title = 'База автомобилей';
                         <div class="product">
                             <a href="#" class="product_img">
                                 <span>-10%</span>
-                                <img src="images/prod2.jpg">
+                                <img src="/images/prod2.jpg">
                             </a>
                             <a href="#" class="product_title">Рюкзак туристический</a>
                             <div class="product_price">
@@ -129,7 +129,7 @@ $this->title = 'База автомобилей';
                         <div class="product">
                             <a href="#" class="product_img">
                                 <span>-10%</span>
-                                <img src="images/prod1.jpg">
+                                <img src="/images/prod1.jpg">
                             </a>
                             <a href="#" class="product_title">Рюкзак туристический</a>
                             <div class="product_price">
@@ -146,7 +146,7 @@ $this->title = 'База автомобилей';
                         <div class="product">
                             <a href="#" class="product_img">
                                 <span>-10%</span>
-                                <img src="images/prod2.jpg">
+                                <img src="/images/prod2.jpg">
                             </a>
                             <a href="#" class="product_title">Рюкзак туристический</a>
                             <div class="product_price">

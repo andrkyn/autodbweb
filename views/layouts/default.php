@@ -27,8 +27,12 @@ DefaultAsset::register($this);
 <body>
 <?php $this->beginBody() ?>
 
- <header>
+<header>
     <div class="container">
+
+        <a href="<?= Url::to('/') ?>">Home</a>
+        <?= Html::a('About', Url::to(['/about'])) ?>
+
         <div class="row header_top">
             <div class="logo col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <a href="/"><img src="/images/logo.png"></a>
@@ -37,12 +41,14 @@ DefaultAsset::register($this);
                 <div class="btn_and_search">
                     <div class="btn_top">
                         <a href="#"><i class="glyphicon glyphicon-map-marker"></i>Обратная связь</a>
-                        <a href="<?=Url::toRoute('page/kabinet')?>"><i class="glyphicon glyphicon-user"></i>Личный кабинет</a>
-                        <a href="<?=Url::toRoute('page/login')?>"><i class="glyphicon glyphicon-lock"></i>Войти</a>
+                        <a href="<?= Url::toRoute('page/kabinet') ?>"><i class="glyphicon glyphicon-user"></i>Личный
+                            кабинет</a>
+                        <a href="<?= Url::toRoute('page/login') ?>"><i class="glyphicon glyphicon-lock"></i>Войти</a>
                     </div>
                     <div class="search_top">
-                        <form>
-                            <input placeholder="Поиск" type="text">
+                        <form method="get" action="<?= Url::to(['category/search'])?>">
+                            <!--<input placeholder="Поиск" type="text">-->
+                            <input type="text" placeholder="Search" name="srch">
                             <button type="submit" name="submit_search">
                                 <i class="glyphicon glyphicon-search"></i>
                             </button>
@@ -78,18 +84,18 @@ DefaultAsset::register($this);
                         ['label' => 'Каталог автомобилей', 'url' => ['/page/catalog']],
                         ['label' => 'blank1', 'url' => ['/page/blank1']],
                         ['label' => 'Контакты', 'url' => ['/page/contacts']],
-                      /*Yii::$app->user->isGuest ? (
-                        ['label' => 'Login', 'url' => ['/site/login']]
-                        ) : (
-                            '<li>'
-                            . Html::beginForm(['/site/logout'], 'post')
-                            . Html::submitButton(
-                                'Logout (' . Yii::$app->user->identity->username . ')',
-                                ['class' => 'btn btn-link logout']
-                            )
-                            . Html::endForm()
-                            . '</li>'
-                        ) */
+                        /*Yii::$app->user->isGuest ? (
+                          ['label' => 'Login', 'url' => ['/site/login']]
+                          ) : (
+                              '<li>'
+                              . Html::beginForm(['/site/logout'], 'post')
+                              . Html::submitButton(
+                                  'Logout (' . Yii::$app->user->identity->username . ')',
+                                  ['class' => 'btn btn-link logout']
+                              )
+                              . Html::endForm()
+                              . '</li>'
+                          ) */
                     ],
                 ]);
                 NavBar::end();
@@ -124,7 +130,6 @@ DefaultAsset::register($this);
 </header>
 
 
-
 <div class="container">
     <div class="row">
         <div class="col-lg-12 contant_wrap">
@@ -140,11 +145,12 @@ DefaultAsset::register($this);
     <div class="row">
 
 
-            <?=$content;?>
+        <?= $content; ?>
 
     </div>
 </div>
 
+<!-- отключаю панель рассылка
 <div class="container-fluid write_email_and_sseti">
     <div class="container">
         <div class="row write_email_and_sseti_wrap">
@@ -166,7 +172,8 @@ DefaultAsset::register($this);
             </div>
         </div>
     </div>
-</div>
+</div> -->
+
 <div class="container-fluid footer">
     <div class="container">
         <div class="row menu_footer_and_contact">
@@ -174,48 +181,38 @@ DefaultAsset::register($this);
                 <div class="footer_menu">
                     <h3>Категории</h3>
                     <ul>
-                        <li><a href="#">Одежда</a></li>
-                        <li><a href="#">Обувь</a></li>
-                        <li><a href="#">Автомобильная база</a></li>
-                        <li><a href="#">Амуниция</a></li>
-                        <li><a href="#">Сувениры</a></li>
-                    </ul>
-                </div>
-                <div class="footer_menu">
-                    <h3>Информация</h3>
-                    <ul>
-                        <li><a href="#">Доставка</a></li>
-                        <li><a href="#">Оплата</a></li>
-                        <li><a href="#">О компании</a></li>
-                        <li><a href="#">Скидки</a></li>
-                        <li><a href="#">Карта сайта</a></li>
+
+                        <li><a href="<?= Url::to('/category') ?>">Автомобильная база</a></li>
+                        <li><a href="#">Item1</a></li>
+                        <li><a href="#">Item2</a></li>
+                        <li><a href="#">Item3</a></li>
+                        <li><a href="#">Item4</a></li>
                     </ul>
                 </div>
                 <div class="footer_menu">
                     <h3>Учетная запись</h3>
                     <ul>
-                        <li><a href="#">Войти</a></li>
-                        <li><a href="#">Зарегистрироваться</a></li>
-                        <li><a href="#">Мои заказы</a></li>
-                        <li><a href="#">Список желаний</a></li>
+                        <li><a href="#">Login</a></li>
+                        <li><a href="#">Regiter</a></li>
+                        <li><a href="#">My order</a></li>
+                        <li><a href="#">Wish list</a></li>
                     </ul>
                 </div>
             </div>
             <div class="col-lg-4 col-md-12 col-sm-12 col-xs-12 contacts">
-                <h3>Контакты</h3>
-                <p><i class="glyphicon glyphicon-map-marker"></i>Адрес: ул. Ленина, 9 г. Москва, 603089</p>
-                <p><i class="glyphicon glyphicon-phone-alt"></i>Служба поддержки: 8 (800) 000-00-00</p>
-                <p><i class="glyphicon glyphicon-envelope"></i>E-mail: info@myshop.ru</p>
+                <h3>Contact</h3>
+                <p><i class="glyphicon glyphicon-map-marker"></i>Addres: -----</p>
+                <p><i class="glyphicon glyphicon-phone-alt"></i>Support: -----</p>
+                <p><i class="glyphicon glyphicon-envelope"></i>E-mail: -----</p>
             </div>
         </div>
         <div class="row">
             <div class="col-lg-12 copy">
-                <p>© 2017 не является действующим интернет-магазином</p>
+                <p>© 2018 тестовый проект</p>
             </div>
         </div>
     </div>
 </div>
-
 
 
 <?php
@@ -250,11 +247,11 @@ NavBar::end();
   */
 ?>
 
-<?/*= Breadcrumbs::widget([
+<? /*= Breadcrumbs::widget([
             'links' => isset($this->params['breadcrumbs']) ? $this->params['breadcrumbs'] : [],
-        ]) */?>
+        ]) */ ?>
 <?= Alert::widget() ?>
-<?//= $content ?>
+<? //= $content ?>
 
 <?php $this->endBody() ?>
 </body>

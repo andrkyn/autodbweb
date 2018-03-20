@@ -13,7 +13,8 @@ $this->title = 'Автомобиль';
 
 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 catalog">
     <div class="row content">
-        BLANK1
+
+      <h1>Blank1111</h1>
 
 
     </div>
