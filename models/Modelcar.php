@@ -13,6 +13,6 @@ class Modelcar extends ActiveRecord
     }
 
     public function getCategories(){
-        return $this->hasOne(Category::className(), ['id' => 'parent']);
+        return $this->hasOne(Category::className(), ['id' => 'category']);
     }
 }

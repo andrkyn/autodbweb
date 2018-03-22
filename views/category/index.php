@@ -19,6 +19,7 @@ $this->title = 'Каталог автомобилей';
 
 
 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12 catalog">
+    <?php var_dump(Yii::$app->user->identity)?>
     <div class="row content">
         <?php if (!empty($categorys)): ?>
             <?php foreach ($categorys as $category): ?>

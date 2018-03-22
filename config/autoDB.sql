@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Мар 19 2018 г., 17:48
+-- Время создания: Мар 20 2018 г., 17:32
 -- Версия сервера: 5.7.11-0ubuntu6
 -- Версия PHP: 7.0.27-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -86,11 +86,12 @@ CREATE TABLE `categories` (
 
 INSERT INTO `categories` (`id`, `name`, `parent`, `img`, `description`) VALUES
 (1, 'SKODA', 6, 'skoda_logo.png', 'описание Шкода'),
-(2, 'Citroen', 6, 'citroen_logo.png', 'Citroën (МФА (фр.): [si.tʁo.ɛn]; [Ситроэн]) — французская автомобилестроительная компания, созданная в 1919 году Андре Ситроеном. С 1976 года она стала частью концерна PSA Peugeot Citroën, штаб-квартира находится на улице Fructidor в Париже. \r\n\r\nИзначально производитель недорогих автомобилей массового потребления со сравнительно простым дизайном, Citroën в 1934 году выпустил на рынок революционную и очень успешную модель Traction Avant — один из первых переднеприводных автомобилей массового производства (производился до 1957 г.). Другие знаковые модели: H Van (1947—1981, «HY»), 2CV (1948—1990, «Гадкий утёнок»), DS (1955—1975, «Богиня») и CX (1974—1991).'),
+(2, 'Citroen', 6, 'citroen_logo.png', 'Citroën (МФА (фр.): [si.tʁo.ɛn]; [Ситроэн]) — французская автомобилестроительная компания, созданная в 1919 году Андре Ситроеном. С 1976 года она стала частью концерна PSA Peugeot Citroën, штаб-квартира находится на улице Fructidor в Париже. (1974—1991).\r\n\r\n'),
 (3, 'FORD', 6, 'ford_logo.png', 'Ford (Ford Motor Company) — американская автомобилестроительная компания, производитель автомобилей под маркой Ford.\r\n\r\nЧетвёртый в мире производитель автомобилей по объёму выпуска за весь период существования; в настоящее время — третий на рынке США после GM и Toyota, и второй в Европе после Volkswagen.\r\n\r\nЗанимает девятое место в списке крупнейших публичных компаний США Fortune 500 по состоянию на 2015 год[2] и 27 место в списке крупнейших мировых корпораций Global 500 2015 года[3]. Штаб-квартира компании располагается в городе Дирборн в пригороде Детройта в штате Мичиган. Около пятой части доходов от продаж продукции и предоставляемых услуг составляет федеральный клиентский сектор обслуживания военных заказов (без учёта иностранных заказчиков американского вооружения и военной техники).[4]'),
-(4, 'RENAULT', 6, 'renault_logo.png', 'Автомашина RENAULT'),
+(4, 'RENAULT', 6, 'renault_logo.png', 'Авто RENAULT'),
 (5, 'CHEVROLET', 6, 'chevrolet_logo.png', 'Chevrolet auto'),
-(6, 'Automobils', 0, 'category_cars.png', 'Категория автомобили');
+(6, 'Automobils', 0, 'category_cars.png', 'Категория автомобили'),
+(7, 'WV', 6, 'ford_fiesta.jpg', 'Wolcswagen');
 
 -- --------------------------------------------------------
 
@@ -143,6 +144,19 @@ INSERT INTO `products` (`id`, `name`, `parent`, `alias`, `hit`) VALUES
 (4, 'Citroen Berlingo', 3, 'fg', 0),
 (5, 'Citroen Calius', 4, 'gh', 0),
 (6, 'Ford scorpio', 4, 'jhj', 0);
+
+-- --------------------------------------------------------
+
+--
+-- Структура таблицы `user`
+--
+
+CREATE TABLE `user` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `username` varchar(255) NOT NULL,
+  `password` varchar(255) NOT NULL,
+  `auth_key` varchar(255) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8;
 
 -- --------------------------------------------------------
 
@@ -212,6 +226,12 @@ ALTER TABLE `products`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Индексы таблицы `user`
+--
+ALTER TABLE `user`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Индексы таблицы `users`
 --
 ALTER TABLE `users`
@@ -236,7 +256,7 @@ ALTER TABLE `cars`
 -- AUTO_INCREMENT для таблицы `categories`
 --
 ALTER TABLE `categories`
-  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=8;
 --
 -- AUTO_INCREMENT для таблицы `posts`
 --
@@ -247,6 +267,11 @@ ALTER TABLE `posts`
 --
 ALTER TABLE `products`
   MODIFY `id` int(4) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
+--
+-- AUTO_INCREMENT для таблицы `user`
+--
+ALTER TABLE `user`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
 /*!40101 SET COLLATION_CONNECTION=@OLD_COLLATION_CONNECTION */;

@@ -41,9 +41,14 @@ DefaultAsset::register($this);
                 <div class="btn_and_search">
                     <div class="btn_top">
                         <a href="#"><i class="glyphicon glyphicon-map-marker"></i>Обратная связь</a>
-                        <a href="<?= Url::toRoute('page/kabinet') ?>"><i class="glyphicon glyphicon-user"></i>Личный
-                            кабинет</a>
-                        <a href="<?= Url::toRoute('page/login') ?>"><i class="glyphicon glyphicon-lock"></i>Войти</a>
+                        <!--<a href="<?= Url::toRoute('page/kabinet') ?>"><i class="glyphicon glyphicon-user"></i>Личный кабинет</a> -->
+
+                       <?php if(Yii::$app->user->isGuest): ?>
+                         <a href="<?= Url::to(['/admin']) ?>"><i class="glyphicon glyphicon-lock"></i>Войти</a>
+                        <?php else: ?>
+                         <a href="<?= Url::to(['/site/logout']) ?>"><i class="glyphicon glyphicon-lock"></i>Выйти (Logout)</a>
+                       <?php endif; ?>
+
                     </div>
                     <div class="search_top">
                         <form method="get" action="<?= Url::to(['category/search'])?>">

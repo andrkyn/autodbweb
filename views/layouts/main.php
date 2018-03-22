@@ -35,10 +35,8 @@ AppAsset::register($this);
     </form>
     <!--] End my button-->
     <div class="container">
-
         <a href="<?=Url::to('/')?>">Home</a>
         <?= Html::a('About', Url::to(['/about'])) ?>
-
         <div class="row header_top">
             <div class="logo col-lg-4 col-md-4 col-sm-12 col-xs-12">
                 <a href="/"><img src="/images/logo.png"></a>
@@ -46,10 +44,16 @@ AppAsset::register($this);
             <div class="btn_top_wrap col-lg-8 col-md-8 col-sm-12 col-xs-12">
                 <div class="btn_and_search">
                     <div class="btn_top">
-
                         <a href="#"><i class="glyphicon glyphicon-map-marker"></i>Обратная связь</a>
-                        <a href="<?=Url::toRoute('page/kabinet')?>"><i class="glyphicon glyphicon-user"></i>Личный кабинет</a>
-                        <a href="<?=Url::toRoute('page/login')?>"><i class="glyphicon glyphicon-lock"></i>Войти</a>
+                        <a href="<?=Url::toRoute('page/kabinet')?>"><i class=""></i>Личный кабинет</a>
+
+
+                        <?php if(Yii::$app->user->isGuest): ?>
+                            <a href="<?= Url::to(['/admin']) ?>"><i class="glyphicon glyphicon-lock"></i>Войти</a>
+                        <?php else: ?>
+                        <a href="<?= Url::to(['/site/logout']) ?>"><i class="glyphicon glyphicon-lock"></i>Выйти (Logout)</a>
+                        <?php endif; ?>
+
                     </div>
                     <div class="search_top">
                         <form>

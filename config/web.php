@@ -10,6 +10,12 @@ $config = [
     'layout' => 'default',
     'language' => 'ru',
     'defaultRoute' => 'category/index', //маршрут по умолчанию
+    'modules' => [
+        'admin' => [
+            'class' => 'app\modules\admin\Module',
+            'layout' => 'admin'
+        ],
+    ],
     //'catchAll' => ['site/offline'], //переадресация запросов всех на одну страницу, если сайт отключен например
     'aliases' => [
         '@bower' => '@vendor/bower-asset',
@@ -27,6 +33,7 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
+            //'loginUrl' => 'page... страница' //перенаправление неавторизованного пользователя
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',
