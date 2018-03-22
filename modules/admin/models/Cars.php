@@ -19,6 +19,7 @@ use Yii;
  */
 class Cars extends \yii\db\ActiveRecord
 {
+    public $image;
     /**
      * @inheritdoc
      */
@@ -43,6 +44,7 @@ class Cars extends \yii\db\ActiveRecord
             [['name'], 'string', 'max' => 100],
             [['price', 'motor'], 'string', 'max' => 10],
             [['img'], 'string', 'max' => 150],
+            //[['image'], 'file', 'extensions' => 'png, jpg'],
         ];
     }
 
@@ -61,6 +63,7 @@ class Cars extends \yii\db\ActiveRecord
             'color' => 'Color',
             'img' => 'Img',
             'description' => 'Description',
+            'file' => 'Photo',
         ];
     }
 }

@@ -2,12 +2,15 @@
 
 namespace app\modules\admin\controllers;
 
+use app\models\Modelcar;
 use Yii;
 use app\modules\admin\models\Cars;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use app\modules\admin\models\UploadForm;
+use yii\web\UploadedFile;
 
 /**
  * CarsController implements the CRUD actions for Cars model.
@@ -33,16 +36,13 @@ class CarsController extends Controller
      * Lists all Cars models.
      * @return mixed
      */
-    public function actionIndex()
+    /*public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Cars::find(),
-        ]);
+        $dataProvider = new ActiveDataProvider(['query' => Cars::find(),]);
 
-        return $this->render('index', [
-            'dataProvider' => $dataProvider,
-        ]);
-    }
+        return $this->render('index', ['dataProvider' => $dataProvider,]);
+    }*/
+
 
     /**
      * Displays a single Cars model.
@@ -51,9 +51,7 @@ class CarsController extends Controller
      */
     public function actionView($id)
     {
-        return $this->render('view', [
-            'model' => $this->findModel($id),
-        ]);
+        return $this->render('view', ['model' => $this->findModel($id)]);
     }
 
     /**
@@ -63,8 +61,8 @@ class CarsController extends Controller
      */
     public function actionCreate()
     {
-        $model = new Cars();
 
+        $model = new Cars();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
@@ -82,14 +80,21 @@ class CarsController extends Controller
      */
     public function actionUpdate($id)
     {
-        $model = $this->findModel($id);
+        // для загрузки файла [
+        $model2 = new UploadForm();
+        if (Yii::$app->request->isPost) {
+            $model2->file = UploadedFile::getInstance($model2, 'file');
+            //debug($model2); die;
+            if ($model2->file && $model2->validate()) {
+                $model2->file->saveAs('uploads/' . $model2->file->baseName . '.' . $model2->file->extension);
+            }
+        } // END для загрузки файла ]
 
+        $model = $this->findModel($id);
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            return $this->render('update', [
-                'model' => $model,
-            ]);
+            return $this->render('update', ['model' => $model, 'model2' => $model2]);
         }
     }
 
@@ -121,4 +126,37 @@ class CarsController extends Controller
             throw new NotFoundHttpException('The requested page does not exist.');
         }
     }
+
+    /*    public function actionUpload()
+        {
+            $model = new UploadForm();
+
+            if (Yii::$app->request->isPost) {
+                $model->file = UploadedFile::getInstance($model, 'file');
+
+                if ($model->file && $model->validate()) {
+                    $model->file->saveAs('uploads/' . $model->file->baseName . '.' . $model->file->extension);
+                }
+            }
+
+            return $this->render('upload', ['model' => $model]);
+        }*/
+
+    public function actionIndex()
+    {
+       // для загрузки файла [
+        $model = new UploadForm();
+        if (Yii::$app->request->isPost) {
+            $model->file = UploadedFile::getInstance($model, 'file');
+            //debug($model2); die;
+            if ($model->file && $model->validate()) {
+                $model->file->saveAs('uploads/' . $model->file->baseName . '.' . $model->file->extension);
+            }
+        } // END для загрузки файла ]
+
+        $dataProvider = new ActiveDataProvider(['query' => Cars::find(),]);
+        return $this->render('index', ['dataProvider' => $dataProvider, 'model' => $model]);
+
+    }
 }
+

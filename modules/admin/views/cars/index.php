@@ -2,6 +2,7 @@
 
 use yii\helpers\Html;
 use yii\grid\GridView;
+use yii\widgets\ActiveForm;
 
 /* @var $this yii\web\View */
 /* @var $dataProvider yii\data\ActiveDataProvider */
@@ -9,6 +10,7 @@ use yii\grid\GridView;
 $this->title = 'Cars';
 $this->params['breadcrumbs'][] = $this->title;
 ?>
+
 <div class="cars-index">
 
     <h1><?= Html::encode($this->title) ?></h1>
@@ -41,10 +43,29 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
                 'format' => 'html',
             ],
-            'img',
+            //'img',
+            [
+                'attribute'=>'img',
+                'format' => 'html',
+                //'value' =>Html::img("@web/images/{$model->img}", ['alt' => $model->name]),
+                'value'=> function($data){
+                    return Html::img('/../../../images/' . $data['img'], ['width' => '100px', 'height' => '80px']);
+                //function($data) {
+                    //return Html::img(Yii::getAlias('@web').'/images/'. $data['img'], ['width' => '70px']);
+                },
+            ],
             // 'description:ntext',
 
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
+
 </div>
+
+<?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?>
+<?= $form->field($model, 'file')->fileInput() ?>
+<button>Отправить</button>
+<?php ActiveForm::end() ?>
+
+
+

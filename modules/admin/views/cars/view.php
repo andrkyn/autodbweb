@@ -35,7 +35,18 @@ $this->params['breadcrumbs'][] = $this->title;
             'price',
             'motor',
             'color',
-            'img',
+            //'img',
+            [
+                'attribute'=>'img',
+                'format' => 'html',
+                //'value' =>Html::img("@web/images/{$model->img}", ['alt' => $model->name]),
+                'value'=> function($data){
+                    return Html::img('/../../../images/' . $data['img']);
+
+                //function($data) {
+                    //return Html::img(Yii::getAlias('@web').'/images/'. $data['img'], ['width' => '70px']);
+                },
+            ],
             'description:ntext',
         ],
     ]) ?>
