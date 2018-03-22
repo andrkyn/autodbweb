@@ -13,10 +13,10 @@ class AdmimgController extends Controller
         $model = new UploadForm();
 
         if (Yii::$app->request->isPost) {
-            $model->file = UploadedFile::getInstance($model, 'file');
+            $model->image = UploadedFile::getInstance($model, 'image');
 
-            if ($model->file && $model->validate()) {
-                $model->file->saveAs('uploads/' . $model->file->baseName . '.' . $model->file->extension);
+            if ($model->image && $model->validate()) {
+                $model->image->saveAs('uploads/' . $model->image->baseName . '.' . $model->image->extension);
             }
         }
 

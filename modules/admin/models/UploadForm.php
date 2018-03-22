@@ -10,7 +10,7 @@ class UploadForm extends Model
     /**
      * @var UploadedFile file attribute
      */
-    public $file;
+    public $image;
 
     /**
      * @return array the validation rules.
@@ -18,7 +18,7 @@ class UploadForm extends Model
     public function rules()
     {
         return [
-            [['file'], 'file'],
+            [['image'], 'file', 'extensions' => 'png, jpg'],
         ];
     }
 }
