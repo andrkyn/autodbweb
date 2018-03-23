@@ -77,9 +77,7 @@ class CarsController extends Controller
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            return $this->render('create', [
-                'model' => $model,
-            ]);
+            return $this->render('create', ['model' => $model,]);
         }
     }
 
@@ -94,10 +92,10 @@ class CarsController extends Controller
         // для загрузки файла [
         $model2 = new UploadForm();
         if (Yii::$app->request->isPost) {
-            $model2->file = UploadedFile::getInstance($model2, 'file');
+            $model2->image = UploadedFile::getInstance($model2, 'file');
             //debug($model2); die;
-            if ($model2->file && $model2->validate()) {
-                $model2->file->saveAs('uploads/' . $model2->file->baseName . '.' . $model2->file->extension);
+            if ($model2->image && $model2->validate()) {
+                $model2->image->saveAs('uploads/' . $model2->image->baseName . '.' . $model2->image->extension);
             }
         } // END для загрузки файла ]
 
