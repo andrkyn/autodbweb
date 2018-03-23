@@ -45,7 +45,7 @@ AppAsset::register($this);
                 <div class="btn_and_search">
                     <div class="btn_top">
                         <a href="#"><i class="glyphicon glyphicon-map-marker"></i>Обратная связь</a>
-                        <a href="<?=Url::toRoute('page/kabinet')?>"><i class=""></i>Личный кабинет</a>
+                        <!--<a href="<?php //Url::toRoute('page/kabinet')?>"><i class=""></i>Личный кабинет</a> -->
 
 
                         <?php if(Yii::$app->user->isGuest): ?>
@@ -89,10 +89,10 @@ AppAsset::register($this);
                     'options' => ['class' => 'navbar-nav'],
                     'items' => [
                     ['label' => 'Главная', 'url' => ['/site/index']],
-                    ['label' => 'Каталог автомобилей', 'url' => ['/page/catalog']],
+                    ['label' => 'Каталог автомобилей', 'url' => ['/category/']],
                     ['label' => 'blank1', 'url' => ['/page/blank1']],
-                    ['label' => 'Контакты', 'url' => ['/page/contacts']],
-                    ['label' => 'About', 'url' => ['/about']],
+                    ['label' => 'Контакты', 'url' => ['/site/contact']],
+                    ['label' => 'About', 'url' => ['/page/about']],
                   /*Yii::$app->user->isGuest ? (
                     ['label' => 'Login', 'url' => ['/site/login']]
                     ) : (
@@ -144,9 +144,9 @@ AppAsset::register($this);
             <div>
                 <img src="/images/ban1.jpg">
                 <a href="#">
-                    <h2>Снаряжение для туризма</h2>
-                    <p>Широкий выбор уристического снаряжения</p>
-                    <span>Подробнее</span>
+                    <h2>Yiiframework</h2>
+                    <p>Yii is a high-performance PHP framework best for developing Web 2.0 applications.</p>
+                    <span>link blank</span>
                 </a>
             </div>
         </div>
@@ -154,9 +154,9 @@ AppAsset::register($this);
             <div>
                 <img src="/images/ban2.jpg">
                 <a href="#">
-                    <h2>Снаряжение для альпинистов</h2>
-                    <p>Качественное снаряжение для альпинизма от мировых брендов</p>
-                    <span>Подробнее</span>
+                    <h2>PhpStorm</h2>
+                    <p>JetBrains PhpStorm all versions universal Activation codes/License servers</p>
+                    <span>link blank</span>
                 </a>
             </div>
         </div>
@@ -203,16 +203,6 @@ AppAsset::register($this);
                         <li><a href="#">item3</a></li>
                         <li><a href="#">item4</a></li>
 
-                    </ul>
-                </div>
-                <div class="footer_menu">
-                    <h3>Информация</h3>
-                    <ul>
-                        <li><a href="#">Доставка</a></li>
-                        <li><a href="#">Оплата</a></li>
-                        <li><a href="#">О компании</a></li>
-                        <li><a href="#">Скидки</a></li>
-                        <li><a href="#">Карта сайта</a></li>
                     </ul>
                 </div>
                 <div class="footer_menu">

@@ -16,7 +16,7 @@ $this->title = 'Автомобиль';
 
 <div class="col-lg-9 col-md-9 col-sm-12 col-xs-12">
     <div class="short_description">
-        <img src="/images/<?php //echo $product->categories['img'];?>">
+        <img src="/images/<?php echo $product->categories['img'];?>">
         <div>
             <h2><?php echo $product['name']; ?></h2>
             <p><?php //echo $product['description']; ?></p>

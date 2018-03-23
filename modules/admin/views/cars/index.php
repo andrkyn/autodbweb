@@ -63,8 +63,8 @@ $this->params['breadcrumbs'][] = $this->title;
 </div>
 
 <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?>
-<?= $form->field($model, 'file')->fileInput() ?>
-<button>Отправить</button>
+<?php // $form->field($model, 'file')->fileInput() ?>
+<!--<button>Отправить</button>-->
 <?php ActiveForm::end() ?>
 
 

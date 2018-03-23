@@ -86,9 +86,9 @@ DefaultAsset::register($this);
                     'options' => ['class' => 'navbar-nav'],
                     'items' => [
                         ['label' => 'Главная', 'url' => ['/site/index']],
-                        ['label' => 'Каталог автомобилей', 'url' => ['/page/catalog']],
+                        ['label' => 'Каталог автомобилей', 'url' => ['/category']],
                         ['label' => 'blank1', 'url' => ['/page/blank1']],
-                        ['label' => 'Контакты', 'url' => ['/page/contacts']],
+                        ['label' => 'Контакты', 'url' => ['/site/contact']],
                         /*Yii::$app->user->isGuest ? (
                           ['label' => 'Login', 'url' => ['/site/login']]
                           ) : (
