@@ -49,7 +49,7 @@ AppAsset::register($this);
 
 
                         <?php if(Yii::$app->user->isGuest): ?>
-                            <a href="<?= Url::to(['/admin']) ?>"><i class="glyphicon glyphicon-lock"></i>Войти</a>
+                            <a href="<?= Url::to(['admin/cars']) ?>"><i class="glyphicon glyphicon-lock"></i>Войти</a>
                         <?php else: ?>
                         <a href="<?= Url::to(['/site/logout']) ?>"><i class="glyphicon glyphicon-lock"></i>Выйти (Logout)</a>
                         <?php endif; ?>

@@ -3,6 +3,7 @@
 
 use app\assets\AppAsset;
 use yii\helpers\Html;
+use yii\helpers\Url;
 
 AppAsset::register($this);
 ?>
@@ -22,13 +23,18 @@ AppAsset::register($this);
 
             <ul class="nav nav-pills">
                 <li role="presentation" class="active"><?= Html::a('Главная','/site/') ?></li>
-                <li role="presentation"><?= Html::a('Каталог','/page/catalog/') ?></li>
+                <li role="presentation"><?= Html::a('Каталог','/category/') ?></li>
                 <li role="presentation"><?= Html::a('autoDB','/page/showdb/') ?></li>
                 <li role="presentation"><?= Html::a('testfrm_ActiveRecord','/testfrm/') ?></li>
                 <li role="presentation"><?= Html::a('testpg_model','/testpg/') ?></li>
-                <li role="presentation"><?= Html::a('gii','/gii/') ?></li>
-                <li role="presentation"><a href="#">Login</a></li>
-            </ul>
+                <li role="presentation"><?= Html::a('Admin panel','/admin/cars/') ?></li>
+                <?php if(Yii::$app->user->isGuest): ?>
+                  <li role="presentation"><a href="<?= Url::to(['admin/']) ?>">Login</a></li>
+                <?php else: ?>
+                  <li role="presentation"><a href="<?= Url::to(['site/logout']) ?>">Выйти</a></li>
+                <?php endif; ?>
+
+    </ul>
             <?= $content ?>
         </div>
     </div>

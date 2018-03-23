@@ -33,7 +33,7 @@ $config = [
         'user' => [
             'identityClass' => 'app\models\User',
             'enableAutoLogin' => true,
-            //'loginUrl' => 'page... страница' //перенаправление неавторизованного пользователя
+            //'loginUrl' => 'sit', //перенаправление неавторизованного пользователя
         ],
         'errorHandler' => [
             'errorAction' => 'site/error',

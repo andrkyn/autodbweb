@@ -11,6 +11,7 @@ use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
 use app\modules\admin\models\UploadForm;
 use yii\web\UploadedFile;
+use yii\filters\AccessControl;
 
 /**
  * CarsController implements the CRUD actions for Cars model.
@@ -23,6 +24,16 @@ class CarsController extends Controller
     public function behaviors()
     {
         return [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true, // разрешаем все действия для данного контроллера
+                        'roles' => ['@'] // только для пользователя с ролью авториз. пользователь
+
+                    ]
+                ]
+            ],
             'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [

@@ -8,6 +8,7 @@ use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
+use yii\filters\AccessControl;
 
 /**
  * CategoriesController implements the CRUD actions for Categories model.
@@ -20,7 +21,17 @@ class CategoriesController extends Controller
     public function behaviors()
     {
         return [
-            'verbs' => [
+            'access' => [
+                'class' => AccessControl::className(),
+                'rules' => [
+                    [
+                        'allow' => true, // разрешаем все действия для данного контроллера
+                        'roles' => ['@'] // только для пользователя с ролью авториз. пользователь
+
+                    ]
+                ]
+            ],
+                'verbs' => [
                 'class' => VerbFilter::className(),
                 'actions' => [
                     'delete' => ['POST'],

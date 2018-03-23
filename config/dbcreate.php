@@ -52,7 +52,7 @@ if (isset($_POST['dbCreate'])) {
     $connect = new mysqli($servername, $username, $passw, $dbname);
 
      //categories
-    $sql = "CREATE TABLE categories (
+    /*$sql = "CREATE TABLE categories (
     id INT (4) NOT NULL PRIMARY KEY,
     name VARCHAR (100) NOT NULL,
     img VARCHAR (150) NOT NULL, 
@@ -145,8 +145,11 @@ if (isset($_POST['dbCreate'])) {
               .$sql;
     } else {
         echo "Error" . $connect->error;
-    }
+    }*/
+
+
 }
+
 $connect->close();
 
 if (isset($_POST['dbDelete'])) {

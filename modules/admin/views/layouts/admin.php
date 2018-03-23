@@ -22,7 +22,7 @@ AppAsset::register($this);
 
             <ul class="nav nav-pills">
                 <li role="presentation" class="active"><?= Html::a('Главная','/site/') ?></li>
-                <li role="presentation"><?= Html::a('Каталог','/page/catalog/') ?></li>
+                <li role="presentation"><?= Html::a('Каталог','/category/') ?></li>
                 <li role="presentation"><?= Html::a('gii','/gii/') ?></li>
                 <li role="presentation"><a href="#">Login</a></li>
                 <li role="presentation"><?= Html::a('categories','/admin/categories/') ?></li>
