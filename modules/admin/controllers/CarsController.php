@@ -92,10 +92,10 @@ class CarsController extends Controller
         // для загрузки файла [
         $model2 = new UploadForm();
         if (Yii::$app->request->isPost) {
-            $model2->image = UploadedFile::getInstance($model2, 'file');
+            $model2->image = UploadedFile::getInstance($model2, 'image');
             //debug($model2); die;
             if ($model2->image && $model2->validate()) {
-                $model2->image->saveAs('uploads/' . $model2->image->baseName . '.' . $model2->image->extension);
+                $model2->image->saveAs('images/uploads/' . $model2->image->baseName . '.' . $model2->image->extension);
             }
         } // END для загрузки файла ]
 
