@@ -12,11 +12,13 @@ use yii\widgets\ActiveForm;
 
     <?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]); ?>
 
+    <?php //$form = ActiveForm::begin(); ?>
+
     <?= $form->field($model, 'category')->textInput() ?>
 
     <?= $form->field($model, 'name')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model, 'parent')->textInput() ?>
+    <?php // $form->field($model, 'parent')->textInput() ?>
 
     <?= $form->field($model, 'price')->textInput(['maxlength' => true]) ?>
 
@@ -26,7 +28,7 @@ use yii\widgets\ActiveForm;
 
     <?= $form->field($model, 'img')->textInput(['maxlength' => true]) ?>
 
-    <?= $form->field($model2, 'image')->fileInput() ?>
+    <?php // $form->field($model2, 'image')->fileInput() ?>
     <!--<button>Отправить</button>-->
 
     <?= $form->field($model, 'description')->textarea(['rows' => 6]) ?>

@@ -72,7 +72,6 @@ class CarsController extends Controller
      */
     public function actionCreate()
     {
-
         $model = new Cars();
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
@@ -89,21 +88,11 @@ class CarsController extends Controller
      */
     public function actionUpdate($id)
     {
-        // для загрузки файла [
-        $model2 = new UploadForm();
-        if (Yii::$app->request->isPost) {
-            $model2->image = UploadedFile::getInstance($model2, 'image');
-            //debug($model2); die;
-            if ($model2->image && $model2->validate()) {
-                $model2->image->saveAs('images/uploads/' . $model2->image->baseName . '.' . $model2->image->extension);
-            }
-        } // END для загрузки файла ]
-
         $model = $this->findModel($id);
         if ($model->load(Yii::$app->request->post()) && $model->save()) {
             return $this->redirect(['view', 'id' => $model->id]);
         } else {
-            return $this->render('update', ['model' => $model, 'model2' => $model2]);
+            return $this->render('update', ['model' => $model,]);
         }
     }
 

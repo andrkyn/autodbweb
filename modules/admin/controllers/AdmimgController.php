@@ -16,7 +16,7 @@ class AdmimgController extends Controller
             $model->image = UploadedFile::getInstance($model, 'image');
 
             if ($model->image && $model->validate()) {
-                $model->image->saveAs('uploads/' . $model->image->baseName . '.' . $model->image->extension);
+                $model->image->saveAs('images/' . $model->image->baseName . '.' . $model->image->extension);
             }
         }
 

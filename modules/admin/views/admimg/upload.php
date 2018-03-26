@@ -1,7 +1,7 @@
 <?php
 
 use yii\widgets\ActiveForm;
-use yii\helpers\Html;
+//use yii\helpers\Html;
 
 ?>
 
@@ -16,9 +16,10 @@ use yii\helpers\Html;
 <?php if($model->image): ?>
 
     <?=  debug($model->image) ?>
-    <img src="uploads/<?= $model->image ?>" alt="">
+    <!--<img src="/uploads/<?= $model->image ?>" alt="">-->
 
 <?php endif; ?>
-<img src="/uploads/<?= $model->image ?>" >
-<img src="/images/logo.png">
+<img src="/images/<?= $model->image ?>" >
+<!--<img src="/images/uploads/3-0_thumb.jpg" >-->
+<!--<img src="/images/prod1.jpg">-->
 

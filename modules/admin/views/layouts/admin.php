@@ -27,6 +27,7 @@ AppAsset::register($this);
                 <li role="presentation"><a href="#">Login</a></li>
                 <li role="presentation"><?= Html::a('categories','/admin/categories/') ?></li>
                 <li role="presentation"><?= Html::a('cars','/admin/cars/') ?></li>
+                <li role="presentation"><?= Html::a('AddPhoto to cars','/admin/admimg/upload/') ?></li>
                 <li role="presentation"><?= Html::a('Выйти','/site/logout') ?></li>
 
 

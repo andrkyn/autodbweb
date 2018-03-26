@@ -63,7 +63,7 @@ class Cars extends \yii\db\ActiveRecord
             'color' => 'Color',
             'img' => 'Img',
             'description' => 'Description',
-            'file' => 'Photo',
+            //'file' => 'Photo',
         ];
     }
 }
