@@ -12,7 +12,7 @@ $this->params['breadcrumbs'][] = $this->title;
 ?>
 
 <div class="cars-index">
-
+    <?php $form = ActiveForm::begin(); ?>
     <h1><?= Html::encode($this->title) ?></h1>
 
     <p>
@@ -59,13 +59,13 @@ $this->params['breadcrumbs'][] = $this->title;
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>
-
+    <?php ActiveForm::end() ?>
 </div>
 
-<?php $form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?>
+<?php //$form = ActiveForm::begin(['options' => ['enctype' => 'multipart/form-data']]) ?>
 <?php // $form->field($model, 'file')->fileInput() ?>
 <!--<button>Отправить</button>-->
-<?php ActiveForm::end() ?>
+<?php //ActiveForm::end() ?>
 
 
 

@@ -2,15 +2,15 @@
 
 namespace app\modules\admin\controllers;
 
-use app\models\Modelcar;
+//use app\models\Modelcar;
 use Yii;
 use app\modules\admin\models\Cars;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
 use yii\filters\VerbFilter;
-use app\modules\admin\models\UploadForm;
-use yii\web\UploadedFile;
+//use app\modules\admin\models\UploadForm;
+//use yii\web\UploadedFile;
 use yii\filters\AccessControl;
 
 /**
@@ -47,12 +47,12 @@ class CarsController extends Controller
      * Lists all Cars models.
      * @return mixed
      */
-    /*public function actionIndex()
+    public function actionIndex()
     {
         $dataProvider = new ActiveDataProvider(['query' => Cars::find(),]);
 
         return $this->render('index', ['dataProvider' => $dataProvider,]);
-    }*/
+    }
 
 
     /**
@@ -140,21 +140,5 @@ class CarsController extends Controller
             return $this->render('upload', ['model' => $model]);
         }*/
 
-    public function actionIndex()
-    {
-       // для загрузки файла [
-        $model = new UploadForm();
-        if (Yii::$app->request->isPost) {
-            $model->file = UploadedFile::getInstance($model, 'file');
-            //debug($model2); die;
-            if ($model->file && $model->validate()) {
-                $model->file->saveAs('uploads/' . $model->file->baseName . '.' . $model->file->extension);
-            }
-        } // END для загрузки файла ]
-
-        $dataProvider = new ActiveDataProvider(['query' => Cars::find(),]);
-        return $this->render('index', ['dataProvider' => $dataProvider, 'model' => $model]);
-
-    }
 }
 
