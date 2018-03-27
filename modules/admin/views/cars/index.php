@@ -20,6 +20,7 @@ $this->params['breadcrumbs'][] = $this->title;
     </p>
     <?= GridView::widget([
         'dataProvider' => $dataProvider,
+        'filterModel' => $searchModel,
         'columns' => [
             ['class' => 'yii\grid\SerialColumn'],
 
@@ -32,10 +33,11 @@ $this->params['breadcrumbs'][] = $this->title;
               }
             ],
             'name',
-            //'parent',
+            'parent',
             'price',
             'motor',
-            //'color',
+            //'categoryName',
+            'color',
             [
                 'attribute' =>'color',
                 'value' => function($data) {
@@ -55,7 +57,7 @@ $this->params['breadcrumbs'][] = $this->title;
                 },
             ],
             // 'description:ntext',
-
+            //'categoryName',
             ['class' => 'yii\grid\ActionColumn'],
         ],
     ]); ?>

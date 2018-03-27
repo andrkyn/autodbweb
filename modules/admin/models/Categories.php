@@ -3,6 +3,7 @@
 namespace app\modules\admin\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "categories".
@@ -23,6 +24,9 @@ class Categories extends \yii\db\ActiveRecord
         return 'categories';
     }
 
+    public function getCars() {
+        return $this->hasMany(Cars::className(), ['category'=>'id']);
+    }
     /**
      * @inheritdoc
      */
@@ -49,5 +53,18 @@ class Categories extends \yii\db\ActiveRecord
             'img' => 'Img',
             'description' => 'Description',
         ];
+    }
+
+    public static function find()
+    {
+        return new CategoriesQuery(get_called_class());
+    }
+
+    public static function getList()
+    {
+        return ArrayHelper::map(
+            static::find()->select(['id', 'name'])->all(),
+            'id',
+            'name');
     }
 }

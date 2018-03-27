@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Хост: localhost
--- Время создания: Мар 22 2018 г., 16:20
+-- Время создания: Мар 27 2018 г., 07:19
 -- Версия сервера: 5.7.11-0ubuntu6
 -- Версия PHP: 7.0.27-1+ubuntu16.04.1+deb.sury.org+1
 
@@ -29,14 +29,14 @@ SET time_zone = "+00:00";
 CREATE TABLE `cars` (
   `id` int(4) NOT NULL,
   `category` int(4) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `parent` int(4) NOT NULL,
-  `price` varchar(10) NOT NULL,
-  `motor` varchar(10) NOT NULL,
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `parent` int(11) NOT NULL,
+  `price` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `motor` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `color` int(4) NOT NULL,
-  `img` varchar(150) NOT NULL,
-  `description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Дамп данных таблицы `cars`
@@ -74,11 +74,11 @@ CREATE TABLE `cart` (
 
 CREATE TABLE `categories` (
   `id` int(10) NOT NULL,
-  `name` varchar(100) NOT NULL,
-  `parent` int(10) UNSIGNED NOT NULL DEFAULT '0',
-  `img` varchar(150) NOT NULL,
-  `description` text NOT NULL
-) ENGINE=InnoDB DEFAULT CHARSET=utf8;
+  `name` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `parent` int(11) NOT NULL,
+  `img` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `description` text COLLATE utf8_unicode_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_unicode_ci;
 
 --
 -- Дамп данных таблицы `categories`
@@ -193,7 +193,8 @@ CREATE TABLE `wish_list` (
 -- Индексы таблицы `cars`
 --
 ALTER TABLE `cars`
-  ADD PRIMARY KEY (`id`);
+  ADD PRIMARY KEY (`id`),
+  ADD KEY `category` (`category`);
 
 --
 -- Индексы таблицы `cart`

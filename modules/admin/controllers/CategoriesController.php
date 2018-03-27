@@ -4,6 +4,7 @@ namespace app\modules\admin\controllers;
 
 use Yii;
 use app\modules\admin\models\Categories;
+use app\modules\admin\models\CategoriesSearch;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -46,12 +47,15 @@ class CategoriesController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider([
-            'query' => Categories::find(),
-        ]);
+        $searchModel = new CategoriesSearch();
+        /*$dataProvider = new ActiveDataProvider([
+            'query' => Categories::find(),]); */
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
 
         return $this->render('index', [
+            'searchModel' => $searchModel,
             'dataProvider' => $dataProvider,
+
         ]);
     }
 

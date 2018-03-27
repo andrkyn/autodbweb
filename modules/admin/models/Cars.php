@@ -3,6 +3,7 @@
 namespace app\modules\admin\models;
 
 use Yii;
+use yii\helpers\ArrayHelper;
 
 /**
  * This is the model class for table "cars".
@@ -47,7 +48,6 @@ class Cars extends \yii\db\ActiveRecord
             //[['image'], 'file', 'extensions' => 'png, jpg'],
         ];
     }
-
     /**
      * @inheritdoc
      */
@@ -57,6 +57,7 @@ class Cars extends \yii\db\ActiveRecord
             'id' => 'ID',
             'category' => 'Category',
             'name' => 'Name',
+            //'categoryName' => 'имя категории',
             'parent' => 'Parent',
             'price' => 'Price',
             'motor' => 'Motor',
@@ -65,5 +66,18 @@ class Cars extends \yii\db\ActiveRecord
             'description' => 'Description',
             //'file' => 'Photo',
         ];
+    }
+    // для фильтра
+    public static function find()
+    {
+        return new CarsQuery(get_called_class());
+    }
+
+    public static function getList()
+    {
+        return ArrayHelper::map(
+            static::find()->select(['id', 'name'])->all(),
+            'id',
+            'name');
     }
 }

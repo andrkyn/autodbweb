@@ -4,7 +4,6 @@
 
 $this->title = 'База автомобилей';
 ?>
-
 <div class="container-fluid tabs_block_main">
     <div class="container">
         <div class="row">

@@ -87,10 +87,10 @@ $this->title = 'Каталог автомобилей';
                                 <table class="table table-striped table-bordered">
                                     <tr>
                                         <td>Объем, л</td>
-                                        <td>40</td>
+                                        <td><?= $modelcar->motor ?></td>
                                     </tr>
                                     <td>Вес, кг</td>
-                                    <td>1,2</td>
+                                    <td>1200</td>
                                     </tr>
                                     <td>Длина, м</td>
                                     <td>4,2</td>

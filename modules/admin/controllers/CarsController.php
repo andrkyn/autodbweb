@@ -5,6 +5,7 @@ namespace app\modules\admin\controllers;
 //use app\models\Modelcar;
 use Yii;
 use app\modules\admin\models\Cars;
+use app\modules\admin\models\CarsSearch;
 use yii\data\ActiveDataProvider;
 use yii\web\Controller;
 use yii\web\NotFoundHttpException;
@@ -49,9 +50,19 @@ class CarsController extends Controller
      */
     public function actionIndex()
     {
-        $dataProvider = new ActiveDataProvider(['query' => Cars::find(),]);
+        $searchModel = new CarsSearch();
+        $dataProvider = $searchModel->search(Yii::$app->request->queryParams);
+        return $this->render('index', [
+            'searchModel' => $searchModel,
+            'dataProvider' => $dataProvider,
+        ]);
 
-        return $this->render('index', ['dataProvider' => $dataProvider,]);
+     /*   $dataProvider = new ActiveDataProvider(['query' => Cars::find(),]);
+        return $this->render('index', [
+            'dataProvider' => $dataProvider,
+        ]);*/
+
+
     }
 
 
