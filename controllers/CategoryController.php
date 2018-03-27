@@ -30,6 +30,7 @@ class CategoryController extends AppController {
         //$catt = Modelcar::find()->where(['category' =>$id])->limit(1)->one();
         //$catt = Category::find()->where(['id' => $_GET['id']])->asArray()->one();
         $catt = Category::findOne($id);
+
         if(empty($catt)) //если массив категории пуст
             throw new \yii\web\HttpException(404, 'Такой нет категории'); // выдать исключение
         return $this->render('view', compact('modelcar', 'catt'));

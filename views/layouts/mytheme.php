@@ -27,7 +27,7 @@ AppAsset::register($this);
                 <li role="presentation"><?= Html::a('autoDB','/page/showdb/') ?></li>
                 <li role="presentation"><?= Html::a('testfrm_ActiveRecord','/testfrm/') ?></li>
                 <li role="presentation"><?= Html::a('testpg_model','/testpg/') ?></li>
-                <li role="presentation"><?= Html::a('Admin panel','/admin/cars/') ?></li>
+                <li role="presentation"><?= Html::a('Admin panel','/admin/categories/') ?></li>
                 <?php if(Yii::$app->user->isGuest): ?>
                   <li role="presentation"><a href="<?= Url::to(['admin/']) ?>">Login</a></li>
                 <?php else: ?>

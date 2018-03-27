@@ -48,8 +48,7 @@ $this->title = 'Каталог автомобилей';
                                 <option selected="selected">--</option>
                                 <option value="0">Цене, по возрастанию</option>
                                 <option value="1">Цене, по убыванию</option>
-                                <option value="2">Названию товара, от А до Я</option>
-                                <option value="3">Названию товара, от Я до А</option>
+                                <option value="2">Модели авто</option>
                             </select>
                         </p>
                         <p><strong>Показать:</strong>
@@ -62,7 +61,12 @@ $this->title = 'Каталог автомобилей';
                         <button type="submit">Go</button>
                     </form>
                 </div>
-
+                <div class="col-lg-3 col-md-3 col-sm-3 hidden-xs view_list_prod">
+                    <p><strong>Вид:</strong>
+                        <a href="#"><i class="glyphicon glyphicon-th"></i><span>Сетка</span></a>
+                        <a href="#"><i class="glyphicon glyphicon-th-list"></i><span>Список</span></a>
+                    </p>
+                </div>
             </div>
         </div>
 
